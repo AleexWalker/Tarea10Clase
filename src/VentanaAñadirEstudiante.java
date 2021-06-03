@@ -85,7 +85,7 @@ public class VentanaAñadirEstudiante {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (libre){
-                    Alumno auxiliarAlumno = new Libre();
+                    Alumno auxiliarAlumno = new Libre(DNI , nombre , curso , nivel , , 0);
                 }
                 if (presencial){
                     Alumno auxiliarAlumno = new Presencial();
