@@ -9,6 +9,10 @@ public class Libre extends Alumno{
         this.numeroHorasDiarias = numeroHorasDiarias;
     }
 
+    public Libre(String dni, String nombre, int curso, String[] nivelAcadémico, ArrayList<Asignatura> listaAsignaturas) {
+        super(dni, nombre, curso, nivelAcadémico, listaAsignaturas);
+    }
+
     public Libre() {
     }
 

@@ -13,6 +13,11 @@ public class Asignatura {
         this.listaEstudiantes = listaEstudiantes;
     }
 
+    public Asignatura(String nombre, int curso) {
+        this.nombre = nombre;
+        this.curso = curso;
+    }
+
     public Asignatura() {
     }
 
