@@ -29,16 +29,24 @@ public class VentanaAñadirEstudiante extends JDialog{
     private static ArrayList<Alumno> listaAlumnos;
     private static ArrayList<Asignatura> listaAsignaturas;
 
-    private Alumno auxiliarAlumnos;
+    private ArrayList<Alumno> auxiliarAlumno;
     private Asignatura auxiliarAsignaturas;
 
     private String DNI;
     private String nombre;
-    private String nivel;
+    private String [] nivel;
     private int curso;
     private boolean libre = false;
     private boolean presencial = false;
     private int convocatoria;
+
+    public static ArrayList<Alumno> getListaAlumnos() {
+        return listaAlumnos;
+    }
+
+    public static void setListaAlumnos(ArrayList<Alumno> listaAlumnos) {
+        VentanaAñadirEstudiante.listaAlumnos = listaAlumnos;
+    }
 
     public VentanaAñadirEstudiante(ArrayList<Alumno> listaAlumnos) {
 
@@ -88,19 +96,23 @@ public class VentanaAñadirEstudiante extends JDialog{
         cmbNivel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                nivel = Objects.requireNonNull(cmbNivel.getSelectedItem()).toString();
+                nivel [0] = Objects.requireNonNull(cmbNivel.getSelectedItem()).toString();
             }
         });
         btnAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (libre){
-                    //Alumno auxiliarAlumno = new Libre( DNI , nombre , curso , nivel , );
+
+                    Alumno auxiliarLibre = new Libre( DNI , nombre , curso , nivel , listaAsignaturas );
+                    listaAlumnos.add(auxiliarLibre);
+
+                } else if (presencial){
+
+                    Alumno auxiliarPresencial = new Presencial(DNI , nombre , curso , nivel , listaAsignaturas , convocatoria);
+                    listaAlumnos.add(auxiliarPresencial);
                 }
-                if (presencial){
-                    Alumno auxiliarAlumno = new Presencial();
-                }
-                listaAlumnos.add(auxiliarAlumnos);
+                auxiliarAlumno = getListaAlumnos();
                 JOptionPane.showMessageDialog(null , "Alumno guardado en el sistema");
             }
         });

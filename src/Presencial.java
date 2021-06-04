@@ -18,6 +18,11 @@ public class Presencial extends Alumno{
         this.plusPorConvocatoria = plusPorConvocatoria;
     }
 
+    public Presencial(String dni, String nombre, int curso, String[] nivelAcadémico, ArrayList<Asignatura> listaAsignaturas, int numeroConvocatoria) {
+        super(dni, nombre, curso, nivelAcadémico, listaAsignaturas);
+        this.numeroConvocatoria = numeroConvocatoria;
+    }
+
     public Presencial() {
     }
 

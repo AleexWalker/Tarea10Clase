@@ -36,7 +36,6 @@ public class Aplicacion {
                             public void actionPerformed(ActionEvent e) {
                                 VentanaAñadirEstudiante = new VentanaAñadirEstudiante(listaAlumnos);
                                 cmbSeleccion.setSelectedItem(0);
-                                cmbSeleccion.
                             }
                         });
                         break;

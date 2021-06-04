@@ -13,6 +13,7 @@ public class Libre extends Alumno{
         super(dni, nombre, curso, nivelAcadémico, listaAsignaturas);
     }
 
+
     public Libre() {
     }
 
